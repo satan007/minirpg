@@ -1,8 +1,6 @@
 
 <?php
-if (!empty($user)) {
-  
-   include 'active/user.php';
+if (!empty($_SESSION['mmmorpglogin'])) {
    include 'style/user.html';      
 	
 } else {

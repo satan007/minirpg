@@ -42,7 +42,7 @@ if(!mysql_error() && @mysql_num_rows($login_result) != 1) {
 }
 
 setcookie('mmmorpglogin', $login, time()+1800); 
-setcookie('mmmorpgpassword', $password, time()+1800); 
+setcookie('mmmorpgpassword', $password, time()+1800);
 $user = mysql_fetch_assoc($login_result);
 
 if(isset($_POST['chat_msg'])) {
