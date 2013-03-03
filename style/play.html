@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <script src="https://app.divshot.com/js/jquery.min.js"></script>
+    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+    <title>Битва роботов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://app.divshot.com/themes/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css"> 
+  </head>
+  
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Битва роботов</a>
+          <div class="navbar-content">
+            <ul class="nav">
+              <li>
+                <a href="/">Главная</a> 
+              </li>
+              <li class="active">
+                <a href="play.php">В бой</a> 
+              </li>
+              <li>
+                <a href="#">О игре</a> 
+              </li>
+              <li>
+                <a href="#">Контакты</a> 
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <?php include ("style/play/user.html"); ?>
+		  <br><br> 
+		  <?php include ("style/play/user_list.html"); ?>
+        </div>
+		
+        <div class="span9">
+		<?php include ("style/play/battle.html"); ?>
+		<?php include ("style/play/log.html"); ?>
+		
+          
+        </div>
+      </div>
+	  <?php include ("style/play/chat.html"); ?>
+    </div>
+  </body>
+
+</html>

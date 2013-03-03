@@ -1,0 +1,15 @@
+
+<center><b>Враги</b><br></center>
+<?for($i = 0; $i < sizeof($userlist)-1; $i++) {?>
+	<?if(!$battle_bool AND $userlist[$i]['battle'] == false AND $user['hp'] > 0 AND ( $userlist[$i]['hp'] == GetHP($userlist[$i]['level']) OR $userlist[$i]['type'] == 'm' )) {?>
+		<a href="play.php?action=battle_begin&enemy=<?=$userlist[$i]['id'];?>&<?=rand(0, 10000000);?>"><?=$userlist[$i]['name'];?></a> [<?=$userlist[$i]['level'];?>, <?=$userlist[$i]['hp'];?>]
+	<?} else {?>
+    <?if(isset($enemy) AND $enemy['id'] == $userlist[$i]['id']) {?>
+      <b><?=$enemy['name'];?> [<?=$enemy['level'];?>, <?=$enemy['hp'];?>]</b>
+    <?} else {?>
+		  <?=$userlist[$i]['name'];?> [<?=$userlist[$i]['level'];?>, <?=$userlist[$i]['hp'];?>]
+    <?}?>
+	<?}?>
+  <font size="-2" color="#FF0000"><?=$userlist[$i]['weapon'];?></font>
+  <br>
+<?}?>

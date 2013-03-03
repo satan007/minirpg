@@ -4,7 +4,7 @@
   <head>
     <script src="https://app.divshot.com/js/jquery.min.js"></script>
     <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
-    <title>index.html</title>
+    <title>Битва роботов</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <link rel="stylesheet" href="https://app.divshot.com/themes/cyborg/bootstrap.min.css">
@@ -38,50 +38,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well">
-            <div class="block-header">Авторизация</div>
-            <br>
-            <form action="auth/auth.php" method="post" id="loginform">
-              <div>
-                <div>
-                  <input class="span12" type="text" name="m_login" placeholder="Логин или e-mail:"> 
-                </div>
-                <div>
-                  <input class="span12" type="password" name="m_password" placeholder="Пароль:"> 
-                </div>
-                <label class="checkbox">
-                  <input type="checkbox" id="auth-save" name="m_submit" value="1"> Запомнить</label>
-                <div>
-                  <input type="submit" class="btn" id="login" onclick="Login(); return false;"
-                  value="Войти"> 
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="well">
-            <div class="block-header">Регистрация</div>
-            <br>
-            <form autocomplete="off" action="auto/register.php" method="post" id="regform">
-              <div>
-                <input class="span12" type="text" id="register-login" name="m_login" placeholder="Логин:"> 
-              </div>
-              <div>
-                <input class="span12" type="text" id="register-email" name="email" placeholder="Email:"> 
-              </div>
-              <div>
-                <input class="span12" type="password" id="register-pass" name="m_password"
-                placeholder="Пароль:"> 
-              </div>
-              <div>
-                <input class="span12" type="password" id="register-repass" name="M_password2"
-                placeholder="Повтор пароля:"> 
-              </div>
-              <div>
-                <input type="button" class="btn" id="create" onclick="Register(); return false;"
-                value="Создать"> 
-              </div>
-            </form>
-          </div>
+          <?php include ("active/side.php"); ?>
         </div>
         <div class="span9">
           <ul class="breadcrumb">
@@ -125,6 +82,9 @@
         </div>
       </div>
     </div>
+	<script>
+document.getElementById('m_login').focus();
+</script>
   </body>
 
 </html>

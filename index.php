@@ -5,19 +5,20 @@ include("robo2.php");
 session_set_cookie_params(180000, "/");
 session_start();
 
-if(isset($_SESSION['mmmorpglogin']) or isset($_SESSION['mmmorpgpassword'])) {
+/*if(isset($_SESSION['mmmorpglogin']) or isset($_SESSION['mmmorpgpassword'])) {
 	header("Location:  play.php");
 	exit;
-}
+}*/
 $msg = '';
 $msg2 = '';
 if(isset($_GET['err']))	$err = (int)$_GET['err']; else $err = 0;
-if($err == 1) {$msg = "Íå ïðàâèëüíûé ëîãèí èëè ïàðîëü.";}
-if($err == 2) {$msg = "Ñîåäèíåíèå ðàçîðâàíî.";}
-if($err == 3) {$msg2 = "Ïàðîëè íå ñîâïàäàþò.";}
-if($err == 4) {$msg2 = "Èìÿ èëè ëîãèí çàíÿòû.";}
-if($err == 5) {$msg = "Êîñÿê ñ êîëè÷åñòâîì ïîëüçîâàòåëåé.";}
+if($err == 1) {$msg = "ÐÐµ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð»Ð¾Ð³Ð¸Ð½ Ð¸Ð»Ð¸ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ.";}
+if($err == 2) {$msg = "Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð·Ð¾Ñ€Ð²Ð°Ð½Ð¾.";}
+if($err == 3) {$msg2 = "ÐŸÐ°Ñ€Ð¾Ð»Ð¸ Ð½Ðµ ÑÐ¾Ð²Ð¿Ð°Ð´Ð°ÑŽÑ‚.";}
+if($err == 4) {$msg2 = "Ð˜Ð¼Ñ Ð¸Ð»Ð¸ Ð»Ð¾Ð³Ð¸Ð½ Ð·Ð°Ð½ÑÑ‚Ñ‹.";}
+if($err == 5) {$msg = "ÐšÐ¾ÑÑÐº Ñ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾Ð¼ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹.";}
 
 echo $roboverh;
 include ("style/index.html");
+
 echo $roboniz; ?>

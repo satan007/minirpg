@@ -1,59 +1,48 @@
-<div class="block-header">Авторизация</div>
-<div class="block-line"></div>
-<form action="auth/auth.php" method="post" id="loginform">
-<div style="text-align: center;">
-
-    <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="auth-login" type="text" name="m_login" placeholder="Логин или e-mail:" /></div>
-    <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input id="auth-pass" type="password" name="m_password" placeholder="Пароль:" /></div>
-    <label style="margin:0 0 0 48px; text-align: left; padding-bottom:2px;" class="checkbox"><input type="checkbox" id="auth-save" name="m_submit" value="1" /> Запомнить</label>
-
-	<div class="input-append input-prepend">
-	<input type="submit" class="btn" id="login" onclick="Login(); return false;" value="Войти">
-	</div>
-	
-</div>
-</form>
-</div>
-
-<!--<center><h3>Вход в игру</h3></center>
-<center><font color="#FF0000"><?=$msg;?></font></center>
-<table width="160" align="center">
-<tr>
-<td>
-<form action="auth/auth.php" method="POST">
-	Логин:<br>
-	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
-	<input name="m_password" type="password" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Войти">
-</form>
-</td>
-</tr>
-</table>
-
-<br><br>
-<center><h3>Регистрация</h3></center>
-<center><font color="#FF0000"><?=$msg2;?></font></center>
-<table width="160" align="center">
-<tr>
-<td>
-<form action="register.php" method="POST">
-	Логин:<br>
-	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
-	<input name="m_password" type="password" style="width: 160px;"><br>
-	Повторите пароль:<br>
-	<input name="m_password2" type="password" style="width: 160px;"><br>
-	E-mail:<br>
-	<input name="m_email" type="text" style="width: 160px;"><br>
-	Имя персонажа:<br>
-	<input name="m_name" type="text" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Регистрация">
-</form>
-</td>
-</tr>
-</table>
-<br>
-<script>
-document.getElementById('m_login').focus();
-</script> -->
+<div class="well">
+            <div class="block-header">Авторизация</div>
+            <br>
+            <form action="auth/auth.php" method="post" id="loginform">
+              <div>
+                <div>
+                  <input class="span12" type="text" name="m_login" placeholder="Логин:"> 
+                </div>
+                <div>
+                  <input class="span12" type="password" name="m_password" placeholder="Пароль:"> 
+                </div>
+                <label class="checkbox">
+                  <input type="checkbox" id="auth-save" name="m_submit" value="1"> Запомнить</label>
+                <div>
+                  <input type="submit" class="btn" id="login" onclick="Login(); return false;"
+                  value="Войти"> 
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="well">
+            <div class="block-header">Регистрация</div>
+            <br>
+            <form autocomplete="off" action="auth/register.php" method="post" id="regform">
+              <div>
+                <input class="span12" type="text" id="register-login" name="m_login" placeholder="Логин:"> 
+              </div>
+              <div>
+                <input class="span12" type="text" id="register-email" name="m_email" placeholder="Email:"> 
+              </div>
+              <div>
+                <input class="span12" type="password" id="register-pass" name="m_password"
+                placeholder="Пароль:"> 
+              </div>
+              <div>
+                <input class="span12" type="password" id="register-repass" name="m_password2"
+                placeholder="Повтор пароля:"> 
+              </div>
+			  <div>
+                <input class="span12" type="password" id="register-repass" name="m_name"
+                placeholder="Имя игрока:"> 
+              </div>
+              <div>
+                <input type="submit" class="btn" id="create" onclick="Register(); return false;"
+                value="Создать"> 
+              </div>
+            </form>
+          </div>

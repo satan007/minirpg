@@ -1,0 +1,7 @@
+<b>Лог жизни персонажа</b> <span align="right">[<a href="play.php">обновить</a>] [<a href="stat.php" target="_blank">статистика</a>]</span><br>
+<ul>
+<?if(isset($fast_msg)) {?><li><?=$fast_msg;?></li><?}?>
+<?for($i = 0; $i < sizeof($msg); $i++){?>
+<li><?=$msg[$i]['message'];?> <font size="-1" color="#CCCCCC">(<?=date("H:i:s", $msg[$i]['date']);?>)</font></li>
+<?}?>
+</ul>

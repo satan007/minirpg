@@ -17,19 +17,19 @@ if(isset($_POST['m_submit'])) {
 		
 		?>
 <br><br>
-<center>Вы зарегистрированы. Можете <a href="/index.php">войти</a> в игру.</center>
+<center>Р’С‹ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹. РњРѕР¶РµС‚Рµ <a href="index.php">РІРѕР№С‚Рё</a> РІ РёРіСЂСѓ.</center>
 		<?
 		exit;
 		} else {
-			header("Location: /index.php?err=4");
+			header("Location: index.php?err=4");
 			exit;
 		}
 	} else {
-		header("Location: /index.php?err=3");
+		header("Location: index.php?err=3");
 		exit;
 	}
 }
 
-header("Location: /index.php");
+header("Location: index.php");
 
 ?>
