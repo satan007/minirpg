@@ -1,4 +1,4 @@
-<!--
+п»ї<!--
 
 timeGo = 0;
 
@@ -10,7 +10,7 @@ function gotoTimer() {
 		document.location = " play.php";
 		return;
 	}
-	document.getElementById('mmmorpg_refrash_timer').innerHTML = 'Обновление через <b>' + (31 - timeGo) + '</b> секунд.';
+	document.getElementById('mmmorpg_refrash_timer').innerHTML = 'РћР±РЅРѕРІР»РµРЅРёРµ С‡РµСЂРµР· <b>' + (31 - timeGo) + '</b> СЃРµРєСѓРЅРґ.';
 	window.setTimeout('gotoTimer()', 1000);
 }
 

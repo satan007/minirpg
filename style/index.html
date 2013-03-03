@@ -2,30 +2,33 @@
 <html>
   
   <head>
-    <script src="style/js/jquery.min.js"></script>
-    <script src="style/js/bootstrap.min.js"></script>
-    <title>Битва роботов (Alpha 0.1)</title>
+    <script src="https://app.divshot.com/js/jquery.min.js"></script>
+    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+    <title>index.html</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="style/css/bootstrap.css">
-    <link rel="stylesheet" href="style/bootstrap-responsive.css"> 
+    <link rel="stylesheet" href="https://app.divshot.com/themes/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css"> 
   </head>
   
   <body>
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#"><b><font color="#AA0000">Б</font>ИТВА РОБОТОВ</b></a>
+          <a class="brand" href="#">Р‘РёС‚РІР° СЂРѕР±РѕС‚РѕРІ</a>
           <div class="navbar-content">
             <ul class="nav">
               <li class="active">
-                <a href="#">Главная</a> 
+                <a href="/">Р“Р»Р°РІРЅР°СЏ</a> 
               </li>
               <li>
-                <a href="#">О игре</a> 
+                <a href="play.php">Р’ Р±РѕР№</a> 
               </li>
               <li>
-                <a href="#">Контакты</a> 
+                <a href="#">Рћ РёРіСЂРµ</a> 
+              </li>
+              <li>
+                <a href="#">РљРѕРЅС‚Р°РєС‚С‹</a> 
               </li>
             </ul>
           </div>
@@ -36,7 +39,48 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well">
-            <?php echo include ("style/login.html"); ?>
+            <div class="block-header">РђРІС‚РѕСЂРёР·Р°С†РёСЏ</div>
+            <br>
+            <form action="auth/auth.php" method="post" id="loginform">
+              <div>
+                <div>
+                  <input class="span12" type="text" name="m_login" placeholder="Р›РѕРіРёРЅ РёР»Рё e-mail:"> 
+                </div>
+                <div>
+                  <input class="span12" type="password" name="m_password" placeholder="РџР°СЂРѕР»СЊ:"> 
+                </div>
+                <label class="checkbox">
+                  <input type="checkbox" id="auth-save" name="m_submit" value="1"> Р—Р°РїРѕРјРЅРёС‚СЊ</label>
+                <div>
+                  <input type="submit" class="btn" id="login" onclick="Login(); return false;"
+                  value="Р’РѕР№С‚Рё"> 
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="well">
+            <div class="block-header">Р РµРіРёСЃС‚СЂР°С†РёСЏ</div>
+            <br>
+            <form autocomplete="off" action="auto/register.php" method="post" id="regform">
+              <div>
+                <input class="span12" type="text" id="register-login" name="m_login" placeholder="Р›РѕРіРёРЅ:"> 
+              </div>
+              <div>
+                <input class="span12" type="text" id="register-email" name="email" placeholder="Email:"> 
+              </div>
+              <div>
+                <input class="span12" type="password" id="register-pass" name="m_password"
+                placeholder="РџР°СЂРѕР»СЊ:"> 
+              </div>
+              <div>
+                <input class="span12" type="password" id="register-repass" name="M_password2"
+                placeholder="РџРѕРІС‚РѕСЂ РїР°СЂРѕР»СЏ:"> 
+              </div>
+              <div>
+                <input type="button" class="btn" id="create" onclick="Register(); return false;"
+                value="РЎРѕР·РґР°С‚СЊ"> 
+              </div>
+            </form>
           </div>
         </div>
         <div class="span9">
@@ -84,9 +128,3 @@
   </body>
 
 </html>
-
-
-<center><font size="-1">
-<font color="#FF0000">ВЫКРУТИМ ВСЕ БОЛТИКИ</font><br>
-...БИТВА РОБОТОВ, только тут мы можем размазать по земле<br> 
-чью-то железную голову, проломить грудь, и вырвать электронное сердце...</font></center>

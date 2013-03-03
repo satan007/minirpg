@@ -1,16 +1,16 @@
 <?php include("system.php");?>
 
 <font size="-1">
-<center>Зарегистрировано <b><?=$reg_users_count-5;?></b> персонажей. Из них <b><?=(sizeof($userlist))-5;?></b> в сети.<br>
+<center>Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅРѕ <b><?=$reg_users_count-5;?></b> РїРµСЂСЃРѕРЅР°Р¶РµР№. РР· РЅРёС… <b><?=(sizeof($userlist))-5;?></b> РІ СЃРµС‚Рё.<br>
 <div id="mmmorpg_refrash_timer"></div></center>
 </font>
 <br>
 <table align="center">
 	<tr>
-	<td><input type="button" value="Бой" onclick="location.href='play.php'" /></td>
-	<td><input type="button" value="Профиль" onclick="location.href='user/info.php'" /></td>
-	<td><input type="button" value="Инвентарь" onclick="location.href='user/invent.php'" /></td>
-	<td><input type="button" value="Выход" onclick="location.href='auth/logout.php'" /></td>
+	<td><input type="button" value="Р‘РѕР№" onclick="location.href='play.php'" /></td>
+	<td><input type="button" value="РџСЂРѕС„РёР»СЊ" onclick="location.href='user/info.php'" /></td>
+	<td><input type="button" value="РРЅРІРµРЅС‚Р°СЂСЊ" onclick="location.href='user/invent.php'" /></td>
+	<td><input type="button" value="Р’С‹С…РѕРґ" onclick="location.href='auth/logout.php'" /></td>
 	</tr></table>
 <table width="100%" align="center">
 <tr>
@@ -18,10 +18,10 @@
 	<td valign="top"><?if($battle_bool != false) {?>
 		<!--   BATTLE BEGIN   -->
 <center>
-<font color="#FF0000">Битва <b><?=$user['name'];?></b> vs. <b><?=$enemy['name'];?></b></font><br>
+<font color="#FF0000">Р‘РёС‚РІР° <b><?=$user['name'];?></b> vs. <b><?=$enemy['name'];?></b></font><br>
 
 <form name="battle" action="play.php" method="POST">
-<div id="battle_timer">...подождите <b><?$td = ($BATTLE_SECOND - $time_delta); if($td <= 0) $td = $BATTLE_SECOND; echo $td;?></b> секунд...</div>
+<div id="battle_timer">...РїРѕРґРѕР¶РґРёС‚Рµ <b><?$td = ($BATTLE_SECOND - $time_delta); if($td <= 0) $td = $BATTLE_SECOND; echo $td;?></b> СЃРµРєСѓРЅРґ...</div>
 </form>
 </center>
 <script>
@@ -33,11 +33,11 @@ function battleTimer() {
   //document.getElementById('m_submit').disabled();
 	timeBattle++;
 	if(timeBattle > <?=$BATTLE_SECOND;?>) {
-    //document.getElementById('battle_timer').innerHTML = '...можете смело бить врага...';
-		document.getElementById('battle_timer').innerHTML = '<input name="battle_submit" type="submit" value="Ударить">';
+    //document.getElementById('battle_timer').innerHTML = '...РјРѕР¶РµС‚Рµ СЃРјРµР»Рѕ Р±РёС‚СЊ РІСЂР°РіР°...';
+		document.getElementById('battle_timer').innerHTML = '<input name="battle_submit" type="submit" value="РЈРґР°СЂРёС‚СЊ">';
 		return;
 	}
-	//document.getElementById('battle_timer').innerHTML = '...подождите  <b>' + (<?=$BATTLE_SECOND;?> - timeBattle + 1) + '</b> секунд...';
+	//document.getElementById('battle_timer').innerHTML = '...РїРѕРґРѕР¶РґРёС‚Рµ  <b>' + (<?=$BATTLE_SECOND;?> - timeBattle + 1) + '</b> СЃРµРєСѓРЅРґ...';
 	document.getElementById('battle_timer').innerHTML = '<img src="img/loading.gif">';
 	window.setTimeout('battleTimer()', 1000);
 }
@@ -48,12 +48,12 @@ function battleTimer() {
     <!--   CHAT BEGIN   -->
 <center>
 <form name="chat" action="play.php" method="POST">
-Чат: <input name="chat_msg" type="text" value="" style="width: 300px;"> <input name="chat_submit" type="submit" value="Сказать">
+Р§Р°С‚: <input name="chat_msg" type="text" value="" style="width: 300px;"> <input name="chat_submit" type="submit" value="РЎРєР°Р·Р°С‚СЊ">
 </form>
 </center>
     <!--   CHAT END   -->
 		<!--   LOG BEGIN   -->
-		<b>Лог жизни персонажа</b> <span align="right">[<a href="play.php">обновить</a>] [<a href="stat.php" target="_blank">статистика</a>]</span><br>
+		<b>Р›РѕРі Р¶РёР·РЅРё РїРµСЂСЃРѕРЅР°Р¶Р°</b> <span align="right">[<a href="play.php">РѕР±РЅРѕРІРёС‚СЊ</a>] [<a href="stat.php" target="_blank">СЃС‚Р°С‚РёСЃС‚РёРєР°</a>]</span><br>
 <ul>
 <?if(isset($fast_msg)) {?><li><?=$fast_msg;?></li><?}?>
 <?for($i = 0; $i < sizeof($msg); $i++){?>
@@ -65,7 +65,7 @@ function battleTimer() {
     <td valign="top" width="200">
 		<!--   USER LIST BEGIN   -->
 <center>
-<b>Список</b><br>
+<b>РЎРїРёСЃРѕРє</b><br>
 <?for($i = 0; $i < sizeof($userlist)-1; $i++) {?>
 	<?if(!$battle_bool AND $userlist[$i]['battle'] == false AND $user['hp'] > 0 AND ( $userlist[$i]['hp'] == GetHP($userlist[$i]['level']) OR $userlist[$i]['type'] == 'm' )) {?>
 		<a href="play.php?action=battle_begin&enemy=<?=$userlist[$i]['id'];?>&<?=rand(0, 10000000);?>"><?=$userlist[$i]['name'];?></a> [<?=$userlist[$i]['level'];?>, <?=$userlist[$i]['hp'];?>]

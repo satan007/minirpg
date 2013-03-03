@@ -1,112 +1,54 @@
-<div class="inform-block" style="display: none;" id="loginform-error"><div class="alert alert-error" id="loginform-error-text"></div></div>
-
-<div id="login-box" class="form-block-rl">
-<div class="block-header">Авторизация</div>
+<div class="block-header">РђРІС‚РѕСЂРёР·Р°С†РёСЏ</div>
 <div class="block-line"></div>
 <form action="auth/auth.php" method="post" id="loginform">
 <div style="text-align: center;">
 
-    <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="auth-login" type="text" name="m_login" placeholder="Логин или e-mail:" /></div>
-    <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input id="auth-pass" type="password" name="m_password" placeholder="Пароль:" /></div>
-    <label style="margin:0 0 0 48px; text-align: left; padding-bottom:2px;" class="checkbox"><input type="checkbox" id="auth-save" name="m_submit" value="1" /> Запомнить</label>
+    <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="auth-login" type="text" name="m_login" placeholder="Р›РѕРіРёРЅ РёР»Рё e-mail:" /></div>
+    <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input id="auth-pass" type="password" name="m_password" placeholder="РџР°СЂРѕР»СЊ:" /></div>
+    <label style="margin:0 0 0 48px; text-align: left; padding-bottom:2px;" class="checkbox"><input type="checkbox" id="auth-save" name="m_submit" value="1" /> Р—Р°РїРѕРјРЅРёС‚СЊ</label>
 
 	<div class="input-append input-prepend">
-	<input type="submit" class="btn" id="login" onclick="Login(); return false;" value="Войти">
-	<input type="button" class="btn" onclick="BlockVisible('reg-box',true); BlockVisible('login-box',false); return false " value="Создать аккаунт">
+	<input type="submit" class="btn" id="login" onclick="Login(); return false;" value="Р’РѕР№С‚Рё">
 	</div>
 	
 </div>
 </form>
 </div>
 
-<script type="text/javascript">
-function BlockHidden(itemID,state) {
-
-	var item = GetById(itemID)
-	if (item == null) return false
-
-	if (state == null) {
-	
-		if (item.style.visibility == 'visible') item.style.visibility = 'hidden'
-		else item.style.visibility = 'visible '
-		
-		return true
-	}
-	
-	var styleText = 'visible'
-
-	if (state == false)  styleText = 'hidden'
-	
-	item.style.visibility = styleText
-	
-	return true	
-}
-
-</script>
-
-<div id="reg-box" style= "display: none;" class="form-block-rl">
-
-<div class="block-header">Регистрация</div>
-
-<div class="block-line"></div>
-
-<form autocomplete="off" action="reg.php" method="post" id="regform">
-		
-	<div style="text-align: center;">
-
-		 <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input class="span8" type="text" id="register-login" name="m_login" placeholder="Логин:" /></div>
-		 <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input class="span8" type="text" id="register-email" name="email" placeholder="Email:" /></div>
-		 <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input class="span8" type="password" id="register-pass" name="m_password" placeholder="Пароль:" /></div>
-		 <div class="input-prepend"><span class="add-on"><i class="icon-lock"></i></span><input class="span8" type="password" id="register-repass" name="M_password2" placeholder="Повтор пароля:" /></div>
-         
-		 <input type="hidden" id="register-female" name="female" value="0" />		 
-         <div class="female-input">Пол: <span id="create-gender">Мальчик</span><img src="<?php echo STYLE_URL ?>img/ribbon.png" style="display: none; visibility: hidden;" alt="Девочка" id="register-femaleimg"/><a href="#" onclick="return RegisterF()">></a></div>
-		 
-		<div class="input-append input-prepend">
-			<input type="button" class="btn" id="create" onclick="Register(); return false;" value="Создать">
-			<input type="button" class="btn" onclick="BlockVisible('reg-box',false); BlockVisible('login-box',true); return false " value="Авторизация">
-        </div>
-
-	</div>
-
-</form>
-	
-</div>
-
-<!--<center><h3>Вход в игру</h3></center>
+<!--<center><h3>Р’С…РѕРґ РІ РёРіСЂСѓ</h3></center>
 <center><font color="#FF0000"><?=$msg;?></font></center>
 <table width="160" align="center">
 <tr>
 <td>
 <form action="auth/auth.php" method="POST">
-	Логин:<br>
+	Р›РѕРіРёРЅ:<br>
 	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
+	РџР°СЂРѕР»СЊ:<br>
 	<input name="m_password" type="password" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Войти">
+	<input name="m_submit" type="submit" value="Р’РѕР№С‚Рё">
 </form>
 </td>
 </tr>
 </table>
 
 <br><br>
-<center><h3>Регистрация</h3></center>
+<center><h3>Р РµРіРёСЃС‚СЂР°С†РёСЏ</h3></center>
 <center><font color="#FF0000"><?=$msg2;?></font></center>
 <table width="160" align="center">
 <tr>
 <td>
 <form action="register.php" method="POST">
-	Логин:<br>
+	Р›РѕРіРёРЅ:<br>
 	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
+	РџР°СЂРѕР»СЊ:<br>
 	<input name="m_password" type="password" style="width: 160px;"><br>
-	Повторите пароль:<br>
+	РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ:<br>
 	<input name="m_password2" type="password" style="width: 160px;"><br>
 	E-mail:<br>
 	<input name="m_email" type="text" style="width: 160px;"><br>
-	Имя персонажа:<br>
+	РРјСЏ РїРµСЂСЃРѕРЅР°Р¶Р°:<br>
 	<input name="m_name" type="text" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Регистрация">
+	<input name="m_submit" type="submit" value="Р РµРіРёСЃС‚СЂР°С†РёСЏ">
 </form>
 </td>
 </tr>

@@ -12,8 +12,8 @@ $db_database = 'wordpress';
 
 $link = mysql_connect($db_host, $db_user, $db_password);
 mysql_select_db($db_database);
-mysql_query("SET CHARACTER SET cp1251"); 
-mysql_query("SET SESSION collation_connection='cp1251_general_cs'");
-mysql_query("SET NAMES cp1251");
+mysql_query("SET CHARACTER SET utf8"); 
+mysql_query("SET SESSION collation_connection='utf8_general_ci'");
+mysql_query("SET NAMES utf8");
 
 ?>

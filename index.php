@@ -20,5 +20,4 @@ if($err == 5) {$msg = "Косяк с количеством пользователей.";}
 
 echo $roboverh;
 include ("style/index.html");
-include ("style/login.html");
 echo $roboniz; ?>

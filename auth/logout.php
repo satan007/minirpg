@@ -9,7 +9,7 @@ session_start();
 }*/
 
 if(!isset($_SESSION['mmmorpglogin']) or !isset($_SESSION['mmmorpgpassword'])) {
-	header("Location:  index.php?err=2");
+	header("Location:  ../index.php");
 	exit;
 }
 
@@ -23,6 +23,6 @@ $_SESSION["mmmorpglogin"] = '';
 $_SESSION["mmmorpgpassword"] = '';
 session_destroy();
 
-header("Location:  index.php?err=2");
+header("Location:  ../index.php");
 
 ?>
