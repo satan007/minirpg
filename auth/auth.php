@@ -1,12 +1,12 @@
 <? 
 $_db_inc_ = true;
 include("../config.php");
-include("password.php");
+//include("password.php");
 
 $login = htmlspecialchars($_POST['m_login']);
 $password = htmlspecialchars($_POST['m_password']);
 
-$login_result = mysql_query("SELECT `login` FROM `user` WHERE `login`='$login' AND `password`='".md5($password)."'"); 
+$login_result = mysql_query("SELECT `$game_login` FROM `$game_user` WHERE `login`='$login' AND `password`='".md5($password)."'"); 
 
 if(!mysql_error() && @mysql_num_rows($login_result) == 1) {
   session_set_cookie_params(180000, "/");

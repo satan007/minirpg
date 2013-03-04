@@ -16,6 +16,13 @@ $LIFE_KOEF = 20; // скорость регенерации, чем меньше, тем быстрее
 $EVENT_KOEF = 30; // частота событий, чем больше, тем реже
 $WEAPON_EVENT_KOEF = 70; // частота событий с оружием, чем больше, тем реже, не меньше 10
 
+$game_user = 'user'; //Таблица с пользователями
+$game_login = 'login';
+$game_email = 'email';
+$game_name = 'name'; //
+$game_id = 'id';
+$game_password = 'password';
+
 
 $save_msg_time = time();
 
