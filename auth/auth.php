@@ -1,6 +1,7 @@
 <? 
 $_db_inc_ = true;
-include("../db.inc.php");
+include("../config.php");
+include("password.php");
 
 $login = htmlspecialchars($_POST['m_login']);
 $password = htmlspecialchars($_POST['m_password']);
@@ -19,7 +20,7 @@ if(!mysql_error() && @mysql_num_rows($login_result) == 1) {
   $_COOKIE['mmmorpglogin'] = $login;
   $_COOKIE['mmmorpgpassword'] = md5($password);*/
 
-	header("Location: ../play.php"); 
+	header("Location: ../index.php"); 
 	exit; 
 } else if (!mysql_error()) {
 	header("Location: ../index.php?err=1"); 

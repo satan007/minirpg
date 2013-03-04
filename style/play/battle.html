@@ -40,7 +40,7 @@ function battleTimer() {
 		return;
 	}
 	//document.getElementById('battle_timer').innerHTML = '...подождите  <b>' + (<?=$BATTLE_SECOND;?> - timeBattle + 1) + '</b> секунд...';
-	document.getElementById('battle_timer').innerHTML = '<img src="img/loading.gif">';
+	document.getElementById('battle_timer').innerHTML = '<img src="style/img/loading.gif">';
 	window.setTimeout('battleTimer()', 1000);
 }
 </script>

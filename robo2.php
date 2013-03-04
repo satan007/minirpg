@@ -1,6 +1,0 @@
-<?php
-
-$roboniz = <<< NOCH
-
-NOCH;
-?>

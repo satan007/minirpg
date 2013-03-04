@@ -1,7 +1,5 @@
 <?php
 
-include("robo2.php");
-
 session_set_cookie_params(180000, "/");
 session_start();
 
@@ -18,7 +16,6 @@ if($err == 3) {$msg2 = "Пароли не совпадают.";}
 if($err == 4) {$msg2 = "Имя или логин заняты.";}
 if($err == 5) {$msg = "Косяк с количеством пользователей.";}
 
-echo $roboverh;
-include ("style/index.html");
 
-echo $roboniz; ?>
+include ("style/index.html");
+ ?>

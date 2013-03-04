@@ -4,18 +4,7 @@ session_set_cookie_params(180000, "/");
 session_start();
 
 $_db_inc_ = true;
-include("db.inc.php");
-include("robo1.php");
-include("robo2.php");
-
-// config
-$BATTLE_SECOND = 10; // скорость боя в секундах, чем бальше, тем медленнее
-$MESSAGE_COUNT = 15;
-$LIFE_KOEF = 20; // скорость регенерации, чем меньше, тем быстрее
-$EVENT_KOEF = 30; // частота событий, чем больше, тем реже
-$WEAPON_EVENT_KOEF = 70; // частота событий с оружием, чем больше, тем реже, не меньше 10
-
-$save_msg_time = time();
+include("config.php");
 
 
 /*if(!isset($_COOKIE['mmmorpglogin']) or !isset($_COOKIE['mmmorpgpassword'])) {
@@ -41,8 +30,8 @@ if(!mysql_error() && @mysql_num_rows($login_result) != 1) {
 	echo mysql_error();
 }
 
-setcookie('mmmorpglogin', $login, time()+1800); 
-setcookie('mmmorpgpassword', $password, time()+1800);
+/*setcookie('mmmorpglogin', $login, time()+1800); 
+setcookie('mmmorpgpassword', $password, time()+1800);*/
 $user = mysql_fetch_assoc($login_result);
 
 if(isset($_POST['chat_msg'])) {
@@ -278,7 +267,6 @@ function BattleEvents(&$user, &$enemy) {
     }
   }
 }
-
 function GetWeapon() {
   $rnd = rand(0, 15);
   switch($rnd) {
