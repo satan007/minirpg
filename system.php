@@ -21,7 +21,7 @@ if(!isset($_SESSION['mmmorpglogin']) or !isset($_SESSION['mmmorpgpassword'])) {
 }
 $login = $_SESSION['mmmorpglogin'];
 $password = $_SESSION['mmmorpgpassword'];
-$login_result = mysql_query("SELECT * FROM `$game_user` WHERE `$game_login`='$login' AND `$game_password`='".$password."' AND `type`='p'");
+$login_result = mysql_query("SELECT * FROM `user` WHERE `login`='$login' AND `password`='".$password."' AND `type`='p'");
 
 if(!mysql_error() && @mysql_num_rows($login_result) != 1) { 
 	header("Location:  index.php?err=5");
@@ -40,10 +40,10 @@ if(isset($_POST['chat_msg'])) {
 
 
 // user list
-$userlist_result = mysql_query("SELECT `$game_id` FROM `$game_user`");
+$userlist_result = mysql_query("SELECT `id` FROM `user`");
 $reg_users_count = @mysql_num_rows($userlist_result);
 if(!$reg_users_count) $reg_users_count = 0;
-$userlist_result = mysql_query("SELECT * FROM `$game_user` WHERE `$game_id`<>{$user['id']} AND ((".time()."-`last_update` < 300) OR `type`='m') ORDER BY `level`, `hp`");
+$userlist_result = mysql_query("SELECT * FROM `user` WHERE `id`<>{$user['id']} AND ((".time()."-`last_update` < 300) OR `type`='m') ORDER BY `level`, `hp`");
 echo mysql_error();
 $online_users_count = @mysql_num_rows($userlist_result);
 if(!$online_users_count) $online_users_count = 0;
@@ -324,7 +324,9 @@ function GetEvent() {
 
 function GetClassName($class) {
 	switch($class) {
-		case 'a': return 'Воин';
+		case 'a1': return 'Паладин';
+		case 'a2': return 'Рыцарь';
+		case 'a3': return 'Воин';
 		case 'b': return 'Маг';
 	}
 }
@@ -416,7 +418,7 @@ function Battle(&$user, &$enemy) {
       if($enemy['type'] != 'm') {
         $enemy['exp'] = (int)($enemy['exp'] * 0.95);
         $enemy['level'] = GetLevel($enemy['exp']);
-        SaveMsg($enemy['id'], 'b', "Вашу браню разбили и часть микросхем были повеждены. Роботы-инженеры смогли отремонтировать вашего робота, но несмогли востановить часть накопленного опыта записанных в поврежденных микросхемах.");
+        SaveMsg($enemy['id'], 'b', "Вашу броню разбили и часть микросхем были повеждены. Роботы-инженеры смогли отремонтировать вашего робота, но несмогли востановить часть накопленного опыта записанных в поврежденных микросхемах.");
       }
       
   		$user['exp'] += $exp;

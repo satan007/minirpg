@@ -1,7 +1,11 @@
-
+<div class="user">
     <!--   USER BEGIN   -->
-<center><b>Персонаж</b></center>
-<b>Имя:</b> <?=$user['name'];?><br>
+	<div class="box_header">
+Персонаж 
+</div><div class="user_logo">
+<img src="/style/img/user_<?php echo $user['class'];?>.png">
+</div>
+<div class = "info"><b>Имя:</b> <?=$user['name'];?><br>
 <b>Уровень:</b> <?=$user['level'];?><br>
 <b>Класс:</b> <?=GetClassName($user['class']);?><br>
 <b>Здоровье:</b> <font color="#FF0000"><?=$user['hp'];?></font>/<?=GetHP($user['level']);?><br>
@@ -12,10 +16,11 @@
 <?}?>
 <?if($user['quest'] != 0) {?>
 <br>Миссия: <b><?=$user['quest_name'];?></b> должен умереть.<br>
-<?}?>
+<?}?></div>
 		<!--   USER END   -->
 <div class="btn-group">
           <a class="btn">Профиль</a>
           <a class="btn">Инвентарь</a>
           <a class="btn" href="auth/logout.php">Выход</a> 
         </div>
+</div>

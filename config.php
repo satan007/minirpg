@@ -1,22 +1,21 @@
 <?
-
 if(!isset($_db_inc_)) {
 	echo "File not found.";
 	exit;
 }
 
 $db_host = 'localhost';
-$db_user = 'wordpress';
-$db_password = 'wordpress';
-$db_database = 'wordpress';
+$db_user = '123';
+$db_password = '123';
+$db_database = '123';
 
-$BATTLE_SECOND = 10; // ñêîðîñòü áîÿ â ñåêóíäàõ, ÷åì áîëüøå, òåì ìåäëåííåå
-$MESSAGE_COUNT = 15;
-$LIFE_KOEF = 20; // ñêîðîñòü ðåãåíåðàöèè, ÷åì ìåíüøå, òåì áûñòðåå
-$EVENT_KOEF = 30; // ÷àñòîòà ñîáûòèé, ÷åì áîëüøå, òåì ðåæå
-$WEAPON_EVENT_KOEF = 70; // ÷àñòîòà ñîáûòèé ñ îðóæèåì, ÷åì áîëüøå, òåì ðåæå, íå ìåíüøå 10
+$BATTLE_SECOND = 10; // ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ð±Ð¾Ñ Ð² ÑÐµÐºÑƒÐ½Ð´Ð°Ñ…, Ñ‡ÐµÐ¼ Ð±Ð¾Ð»ÑŒÑˆÐµ, Ñ‚ÐµÐ¼ Ð¼ÐµÐ´Ð»ÐµÐ½Ð½ÐµÐµ
+$MESSAGE_COUNT = 1000;
+$LIFE_KOEF = 2; // ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ñ€ÐµÐ³ÐµÐ½ÐµÑ€Ð°Ñ†Ð¸Ð¸, Ñ‡ÐµÐ¼ Ð¼ÐµÐ½ÑŒÑˆÐµ, Ñ‚ÐµÐ¼ Ð±Ñ‹ÑÑ‚Ñ€ÐµÐµ
+$EVENT_KOEF = 30; // Ñ‡Ð°ÑÑ‚Ð¾Ñ‚Ð° ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹, Ñ‡ÐµÐ¼ Ð±Ð¾Ð»ÑŒÑˆÐµ, Ñ‚ÐµÐ¼ Ñ€ÐµÐ¶Ðµ
+$WEAPON_EVENT_KOEF = 7; // Ñ‡Ð°ÑÑ‚Ð¾Ñ‚Ð° ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹ Ñ Ð¾Ñ€ÑƒÐ¶Ð¸ÐµÐ¼, Ñ‡ÐµÐ¼ Ð±Ð¾Ð»ÑŒÑˆÐµ, Ñ‚ÐµÐ¼ Ñ€ÐµÐ¶Ðµ, Ð½Ðµ Ð¼ÐµÐ½ÑŒÑˆÐµ 10
 
-$game_user = 'user'; //Òàáëèöà ñ ïîëüçîâàòåëÿìè
+$game_user = 'user'; //Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑÐ¼Ð¸
 $game_login = 'login';
 $game_email = 'email';
 $game_name = 'name'; //
@@ -31,5 +30,4 @@ mysql_select_db($db_database);
 mysql_query("SET CHARACTER SET utf8"); 
 mysql_query("SET SESSION collation_connection='utf8_general_ci'");
 mysql_query("SET NAMES utf8");
-
 ?>

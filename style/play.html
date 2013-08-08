@@ -2,13 +2,14 @@
 <html>
   
   <head>
-    <script src="https://app.divshot.com/js/jquery.min.js"></script>
-    <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+    <script src="/style/js/jquery.min.js"></script>
+    <script src="/style/js/bootstrap.min.js"></script>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>Битва роботов</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <link rel="stylesheet" href="https://app.divshot.com/themes/cyborg/bootstrap.min.css">
-    <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css"> 
+    
+    <link rel="stylesheet" href="/style/css/bootstrap.css">
+    <link rel="stylesheet" href="/style/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="/style/css/style.css"> 	
   </head>
   
   <body>
@@ -38,9 +39,11 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <?php include ("style/play/user.html"); ?>
-		  <br><br> 
+          <p><?php include ("style/play/user.html"); ?>
+		  </p>
+	  <p>
 		  <?php include ("style/play/user_list.html"); ?>
+		  </p>
         </div>
 		
         <div class="span9">
@@ -50,7 +53,6 @@
           
         </div>
       </div>
-	  <?php include ("style/play/chat.html"); ?>
     </div>
   </body>
 

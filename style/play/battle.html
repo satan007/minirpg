@@ -1,27 +1,53 @@
-﻿<?if($battle_bool != false) {?>
-
+﻿<?if($battle_bool != false) {
+$enem_hp = 400/GetHP($enemy['level'])*$enemy['hp'];
+if($enem_hp > 400) $enem_hp = 400;
+$userok_hp = 400/GetHP($user['level'])*$user['hp'];
+if($userok_hp > 400) $userok_hp = 400;?>
 
 <center>
-<table><tr><td><font color="#FF0000"><b>Битва</b></font></td></tr>
-<tr><td><b><?=$enemy['name'];?></b></td>
-<td> vs. </td>
-<td><div id="right"><?=$user['name'];?></div></td></tr>
-<tr><td width="400" height="100%" valign="left">
-		<div class="progress progress-striped pull-left progress-danger active"
-        style="">
- <? $enem_hp = 300/GetHP($enemy['level'])*$enemy['hp'];?>
-          <div class="bar" style="width: <?=$enem_hp;?>px"></div>
-		  <?=$enemy['hp'];?>
-        </div></td><td></td>
-		
-		<td width="400" height="100%" valign="right">
-		<div class="progress progress-striped pull-right progress-danger active"
-        style="">		
- <? $userok_hp = 300/GetHP($user['level'])*$user['hp'];?>
-          <div class="bar" style="width: <?=$userok_hp;?>px"></div>
-		   <?=$user['hp'];?>
-        </div></td></tr>
-		</table>
+	<table>
+		<tr>
+			<td>
+				<font color="#FF0000"><h1>Битва</h1></font>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="/style/img/a.gif"><br>
+				<h4><?=$user['name'];?> <?php echo GetHP($user['level']);?>/<?php echo $user['hp']; ?></h4>
+			</td>
+			<td>
+				<h4> vs </h2>
+			</td>
+			<td>
+				<div class="right">
+				<img src="/style/img/enem.gif"><br>
+				<h4><?=$enemy['name'];?> <?php echo GetHP($enemy['level']);?>/<?php echo $enemy['hp']; ?></h4>
+					
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="progress progress-danger" style="width:400px">
+					<div class="bar" style="width: <?=$userok_hp;?>px">
+						
+					</div>
+					
+				</div>
+			</td>
+			<td>
+			
+			</td>
+			<td>
+				<div class="progress progress-danger" style="width:400px">		
+					<div class="bar" style="width: <?=$enem_hp;?>px; float:right">
+						
+					</div>
+					
+				</div>
+			</td>
+		</tr>
+	</table>
 <form name="battle" action="play.php" method="POST">
 <div id="battle_timer">...подождите <b><?$td = ($BATTLE_SECOND - $time_delta); if($td <= 0) $td = $BATTLE_SECOND; echo $td;?></b> секунд...</div>
 </form>

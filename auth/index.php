@@ -15,49 +15,49 @@ if(isset($_SESSION['mmmorpglogin']) or isset($_SESSION['mmmorpgpassword'])) {
 $msg = '';
 $msg2 = '';
 if(isset($_GET['err']))	$err = (int)$_GET['err']; else $err = 0;
-if($err == 1) {$msg = "Не правильный логин или пароль.";}
-if($err == 2) {$msg = "Соединение разорвано.";}
-if($err == 3) {$msg2 = "Пароли не совпадают.";}
-if($err == 4) {$msg2 = "Имя или логин заняты.";}
-if($err == 5) {$msg = "Косяк с количеством пользователей.";}
+if($err == 1) {$msg = "РќРµ РїСЂР°РІРёР»СЊРЅС‹Р№ Р»РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ.";}
+if($err == 2) {$msg = "РЎРѕРµРґРёРЅРµРЅРёРµ СЂР°Р·РѕСЂРІР°РЅРѕ.";}
+if($err == 3) {$msg2 = "РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚.";}
+if($err == 4) {$msg2 = "РРјСЏ РёР»Рё Р»РѕРіРёРЅ Р·Р°РЅСЏС‚С‹.";}
+if($err == 5) {$msg = "РљРѕСЃСЏРє СЃ РєРѕР»РёС‡РµСЃС‚РІРѕРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№.";}
 
 echo $roboverh;
 ?>
 
-<center><h3>Вход в игру</h3></center>
+<center><h3>Р’С…РѕРґ РІ РёРіСЂСѓ</h3></center>
 <center><font color="#FF0000"><?=$msg;?></font></center>
 <table width="160" align="center">
 <tr>
 <td>
 <form action="auth.php" method="POST">
-	Логин:<br>
+	Р›РѕРіРёРЅ:<br>
 	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
+	РџР°СЂРѕР»СЊ:<br>
 	<input name="m_password" type="password" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Войти">
+	<input name="m_submit" type="submit" value="Р’РѕР№С‚Рё">
 </form>
 </td>
 </tr>
 </table>
 
 <br><br>
-<center><h3>Регистрация</h3></center>
+<center><h3>Р РµРіРёСЃС‚СЂР°С†РёСЏ</h3></center>
 <center><font color="#FF0000"><?=$msg2;?></font></center>
 <table width="160" align="center">
 <tr>
 <td>
 <form action="register.php" method="POST">
-	Логин:<br>
+	Р›РѕРіРёРЅ:<br>
 	<input name="m_login" type="text" style="width: 160px;"><br>
-	Пароль:<br>
+	РџР°СЂРѕР»СЊ:<br>
 	<input name="m_password" type="password" style="width: 160px;"><br>
-	Повторите пароль:<br>
+	РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ:<br>
 	<input name="m_password2" type="password" style="width: 160px;"><br>
 	E-mail:<br>
 	<input name="m_email" type="text" style="width: 160px;"><br>
-	Имя персонажа:<br>
+	РРјСЏ РїРµСЂСЃРѕРЅР°Р¶Р°:<br>
 	<input name="m_name" type="text" style="width: 160px;"><br>
-	<input name="m_submit" type="submit" value="Регистрация">
+	<input name="m_submit" type="submit" value="Р РµРіРёСЃС‚СЂР°С†РёСЏ">
 </form>
 </td>
 </tr>

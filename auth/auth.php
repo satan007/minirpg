@@ -1,12 +1,11 @@
 <? 
 $_db_inc_ = true;
 include("../config.php");
-//include("password.php");
 
 $login = htmlspecialchars($_POST['m_login']);
 $password = htmlspecialchars($_POST['m_password']);
 
-$login_result = mysql_query("SELECT `$game_login` FROM `$game_user` WHERE `login`='$login' AND `password`='".md5($password)."'"); 
+$login_result = mysql_query("SELECT `login` FROM `user` WHERE `login`='$login' AND `password`='".md5($password)."'"); 
 
 if(!mysql_error() && @mysql_num_rows($login_result) == 1) {
   session_set_cookie_params(180000, "/");
@@ -20,10 +19,10 @@ if(!mysql_error() && @mysql_num_rows($login_result) == 1) {
   $_COOKIE['mmmorpglogin'] = $login;
   $_COOKIE['mmmorpgpassword'] = md5($password);*/
 
-	header("Location: ../index.php"); 
+	header("Location:/play.php"); 
 	exit; 
 } else if (!mysql_error()) {
-	header("Location: ../index.php?err=1"); 
+	header("Location:/index.php?err=1"); 
 } else {
 	echo mysql_error(); 
 }

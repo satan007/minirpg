@@ -12,4 +12,3 @@
 document.getElementById('chat_msg').focus();
 </script>
 <script language="JavaScript" src="script.js"></script>
-<?php echo $roboniz; ?>
